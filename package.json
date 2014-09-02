@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/NestedData/SpeakNoEvil",
   "devDependencies": {
-    "assert": "^1.1.2",
     "chai": "^1.9.1",
     "coffee-script": "^1.8.0",
     "grunt": "^0.4.5",
