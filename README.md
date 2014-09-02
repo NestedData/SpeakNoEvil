@@ -7,8 +7,8 @@ Searches a string for a substring match of each phrase in the blacklist
 ## USAGE:
 
 ```coffee
-MSUProfanityFilter = new SpeakNoEvil(["a", "b", "c"])
-result = MSUProfanityFilter.check("a possibly profane string")
+Filter = new SpeakNoEvil(["a", "b", "c"])
+result = Filter.check("a possibly profane string")
 if result
   console.log "string was profane"
 ```
