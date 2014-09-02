@@ -4,7 +4,7 @@
 
 Searches a string for a substring match of each word/phrase in the blacklist
 
-## USAGE:
+## Usage:
 
 ```coffee
 # create a filter with the default list
