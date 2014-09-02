@@ -2,12 +2,18 @@
 
 ## Methodology:
 
-Searches a string for a substring match of each phrase in the blacklist
+Searches a string for a substring match of each word/phrase in the blacklist
 
 ## USAGE:
 
 ```coffee
+# create a filter with the default list
+Filter = new SpeakNoEvil()
+
+# create a filter with a custom list
 Filter = new SpeakNoEvil(["a", "b", "c"])
+
+# check a string for profanity
 result = Filter.check("a possibly profane string")
 if result
   console.log "string was profane"
