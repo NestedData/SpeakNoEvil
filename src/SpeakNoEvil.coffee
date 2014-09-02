@@ -20,14 +20,11 @@ class SpeakNoEvil
         i++
     text
 
-  # replace punctuation with spaces
+  # Replace punctuation with spaces. Reduces multiple
+  # punctuation to a single space.
   _replacePunctuation: (text) ->
-    punctuation = "@=+[]\|,<>?".split("")
     regex = /[\.,-\/#!$%\^&\*;:{}=\-_`~()<>\[\]\?@\+]/g
     text.replace regex, " "
-    # punctuation.forEach (char) ->
-    #   text = text.replace(new RegExp(char, "g"), " ")
-    # text
 
   cleanText: (text) ->
     text = @_replacePunctuation(@_replaceAccents(text))
@@ -46,7 +43,6 @@ class SpeakNoEvil
     # short circuits if a match is found
     result = @blacklist.some (black_phrase) ->
       regex = new RegExp("\\b#{black_phrase}\\b", "g")
-      # console.log regex
       text.search(regex) > -1
 
     return result
