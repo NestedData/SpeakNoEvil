@@ -1,0 +1,32 @@
+{
+  "name": "speak-no-evil",
+  "version": "0.0.1",
+  "description": "Searches strings for the existance of words specified in a blacklist",
+  "main": "lib/SpeakNoEvil.js",
+  "scripts": {
+    "test": "grunt mochaTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NestedData/SpeakNoEvil.git"
+  },
+  "keywords": [
+    "profanity"
+  ],
+  "author": "Jake Gaylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NestedData/SpeakNoEvil/issues"
+  },
+  "homepage": "https://github.com/NestedData/SpeakNoEvil",
+  "devDependencies": {
+    "assert": "^1.1.2",
+    "chai": "^1.9.1",
+    "coffee-script": "^1.8.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.11.1",
+    "grunt-git": "^0.2.14",
+    "grunt-mocha-test": "^0.11.0",
+    "mocha": "^1.21.4"
+  }
+}
