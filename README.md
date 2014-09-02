@@ -1,0 +1,1 @@
+[ ![Codeship Status for NestedData/SpeakNoEvil](https://www.codeship.io/projects/04ee87d0-14be-0132-d27b-7e5e22028118/status)](https://www.codeship.io/projects/33508)
