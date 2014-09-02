@@ -27,5 +27,6 @@
     "grunt-git": "^0.2.14",
     "grunt-mocha-test": "^0.11.0",
     "mocha": "^1.21.4"
-  }
+  },
+  "engine": "node 0.10.28"
 }
