@@ -18,3 +18,9 @@ result = Filter.check("a possibly profane string")
 if result
   console.log "string was profane"
 ```
+
+## Running tests
+```
+npm install -g grunt mocha
+npm test
+```
