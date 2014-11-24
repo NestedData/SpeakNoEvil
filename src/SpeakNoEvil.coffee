@@ -44,7 +44,8 @@ class SpeakNoEvil
     result = @blacklist.some (black_phrase) =>
       black_phrase = @cleanText(black_phrase).trim()
       regex = new RegExp("\\b#{black_phrase}\\b", "g")
-      text.search(regex) > -1
+      search_result = text.search(regex) > -1
+      return search_result
 
     return result
 

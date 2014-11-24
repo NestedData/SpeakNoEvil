@@ -94,6 +94,14 @@ describe 'SpeakNoEvil', ->
       @filter.resetBlacklist()
       assert.isTrue res
 
+    it 'should match a single custom profane hashtag with special characters', ->
+      text = "#A&M beta"
+      @filter.setBlacklist ["#A&M"]
+      # console.log @filter.blacklist
+      res = @filter.check text
+      @filter.resetBlacklist()
+      assert.isTrue res
+
     it 'should not match a single clean word', ->
       text = "Rabbit"
       res = @filter.check text
