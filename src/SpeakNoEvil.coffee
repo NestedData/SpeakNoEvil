@@ -38,10 +38,11 @@ class SpeakNoEvil
     
     # lowercase the string
     text = text.toLowerCase()
-
+    # console.log text
     # search the string for all phrases from the blacklist
     # short circuits if a match is found
-    result = @blacklist.some (black_phrase) ->
+    result = @blacklist.some (black_phrase) =>
+      black_phrase = @cleanText(black_phrase).trim()
       regex = new RegExp("\\b#{black_phrase}\\b", "g")
       text.search(regex) > -1
 
