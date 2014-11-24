@@ -62,6 +62,38 @@ describe 'SpeakNoEvil', ->
       res = @filter.check text
       assert.isTrue res
 
+    it 'should match a single profane word in the middle of a string', ->
+      text = "foo ass foo"
+      res = @filter.check text
+      assert.isTrue res
+
+    it 'should match a single profane word regardless of case', ->
+      text = "ASs"
+      res = @filter.check text
+      assert.isTrue res
+
+    it 'should match a single custom profane hashtag at the beginning of a string', ->
+      text = "#alpha beta"
+      @filter.setBlacklist ["#alpha"]
+      # console.log @filter.blacklist
+      res = @filter.check text
+      @filter.resetBlacklist()
+      assert.isTrue res
+
+    it 'should match a single custom profane hashtag in the middle of a string', ->
+      text = "gamma #alpha beta"
+      @filter.setBlacklist ["#alpha"]
+      res = @filter.check text
+      @filter.resetBlacklist()
+      assert.isTrue res
+
+    it 'should match a single custom profane hashtag at the end of a string', ->
+      text = "gamma #alpha beta"
+      @filter.setBlacklist ["#alpha"]
+      res = @filter.check text
+      @filter.resetBlacklist()
+      assert.isTrue res
+
     it 'should not match a single clean word', ->
       text = "Rabbit"
       res = @filter.check text
