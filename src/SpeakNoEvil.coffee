@@ -42,7 +42,7 @@ class SpeakNoEvil
     # search the string for all phrases from the blacklist
     # short circuits if a match is found
     result = @blacklist.some (black_phrase) =>
-      black_phrase = @cleanText(black_phrase).trim()
+      # black_phrase = @cleanText(black_phrase).trim()
       regex = new RegExp("\\b#{black_phrase}\\b", "g")
       search_result = text.search(regex) > -1
       return search_result
