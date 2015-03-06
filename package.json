@@ -1,6 +1,6 @@
 {
   "name": "speak-no-evil",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Searches strings for the existance of words specified in a blacklist",
   "main": "lib/SpeakNoEvil.js",
   "scripts": {
@@ -28,5 +28,5 @@
     "grunt-mocha-test": "^0.11.0",
     "mocha": "^1.21.4"
   },
-  "engine": "node 0.10.28"
+  "engine": "node 0.10.33"
 }
