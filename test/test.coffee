@@ -9,7 +9,7 @@ describe 'SpeakNoEvil', ->
     @invalid_blacklist = {}
     done()
 
-  
+
   describe 'constructor', ->
     it 'should set the default list if no blacklist is provided', ->
       @filter.setBlacklist()
@@ -148,3 +148,8 @@ describe 'SpeakNoEvil', ->
       text = "dickerson"
       res  = @filter.check text
       assert.isFalse res
+
+    it 'should match a profane word that appears as part of another word when run aggressively', ->
+      text = "dickerson"
+      res  = @filter.check text, true
+      assert.isTrue res

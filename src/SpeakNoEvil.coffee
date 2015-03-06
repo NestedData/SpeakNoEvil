@@ -28,14 +28,14 @@ class SpeakNoEvil
 
   cleanText: (text) ->
     text = @_replacePunctuation(@_replaceAccents(text))
-  
+
   # returns true if the text is profane
-  check: (text) ->
+  check: (text, aggressive=false) ->
     # NOTE: this algorithm wastes a bunch of time. sorting the blacklist by common use would help
     #       but the correct solution is a better algorithm. We'd much rather check for the existance
-    #       of each ngram in the text within the black list. 
+    #       of each ngram in the text within the black list.
     text = @cleanText(text)
-    
+
     # lowercase the string
     text = text.toLowerCase()
     # console.log text
@@ -43,7 +43,10 @@ class SpeakNoEvil
     # short circuits if a match is found
     result = @blacklist.some (black_phrase) =>
       black_phrase = @cleanText(black_phrase).trim()
-      regex = new RegExp("\\b#{black_phrase}\\b", "g")
+      if aggressive # (dickerson is profane)
+        regex = new RegExp("#{black_phrase}", "g")
+      else # (dickerson is not profane)
+        regex = new RegExp("\\b#{black_phrase}\\b", "g")
       search_result = text.search(regex) > -1
       return search_result
 
