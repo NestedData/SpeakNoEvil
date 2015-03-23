@@ -4,7 +4,7 @@
   "description": "Searches strings for the existance of words specified in a blacklist",
   "main": "lib/SpeakNoEvil.js",
   "scripts": {
-    "test": "grunt mochaTest"
+    "test": "./node_modules/.bin/istanbul cover grunt -- mochaTest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "grunt-contrib-coffee": "^0.11.1",
     "grunt-git": "^0.2.14",
     "grunt-mocha-test": "^0.11.0",
+    "istanbul": "^0.3.9",
     "mocha": "^1.21.4"
   },
   "engine": "node 0.10.33"

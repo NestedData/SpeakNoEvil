@@ -11,6 +11,10 @@ describe 'SpeakNoEvil', ->
 
 
   describe 'constructor', ->
+    it 'should allow a custom blacklist', ->
+      custom_filter = new SNE(["custom"])
+      assert.notEqual SNE.DEFAULT_BLACKLIST.length, custom_filter.blacklist.length
+
     it 'should set the default list if no blacklist is provided', ->
       @filter.setBlacklist()
       assert.equal SNE.DEFAULT_BLACKLIST.length, @filter.blacklist.length
